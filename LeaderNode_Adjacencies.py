@@ -50,7 +50,7 @@ class Block:
         while self.hash[:difficulty] != target:
             self.nonce += 1
             self.hash = self.calculate_hash()
-        print("Block mined: ", self.hash)  # Commented out to reduce console clutter
+        print("Block mined: ", self.hash)
 
 class SimpleBlockchain:
     def __init__(self, difficulty=2):
@@ -112,7 +112,7 @@ class ScaleFreeNetwork:
         self.edges = [(i, j) for i in self.nodes for j in self.nodes if i != j]
         self.m = m
         self.dynamic_m_adjustment_enabled = True
-        self.leader_adjacencies = {}  # Dictionary to store leader-node adjacencies
+        self.leader_adjacencies = {}  # to store leader-node adjacencies
 
     def node_degree(self, node):
         return sum(1 for edge in self.edges if node in edge)
@@ -320,7 +320,7 @@ def visualize_results(results):
     plt.show()
 
 m_values = range(1, 21)
-network_sizes = [100]  # Defined globally if used in multiple functions
+network_sizes = [100]
 results = simulate_performance_for_m_values(m_values, network_sizes)
 
 # print_results(results)
